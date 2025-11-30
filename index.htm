@@ -26,8 +26,9 @@
         .menyu label {
             background-color: #e5e7eb;
             color: #4b5563;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 10px;
+            font-size: small;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
@@ -56,6 +57,10 @@
                         <span class="font-bold text-xl"><span id="k-meblegtxt">10000</span> ₼</span>
                     </div>
                     <input type="range" id="k-mebleg" min="300" max="50000" value="10000" step="100" class="w-full h-2" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>300 ₼</span>
+                        <span>50000 ₼</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -63,6 +68,10 @@
                         <span class="font-bold text-xl"><span id="k-muddettxt">12</span> ay</span>
                     </div>
                     <input type="range" id="k-muddet" min="3" max="59" value="12" step="1" class="w-full h-2" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>3 ay</span>
+                        <span>59 ay</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -70,13 +79,17 @@
                         <span class="font-bold text-xl"><span id="k-faiztxt">12</span> %</span>
                     </div>
                     <input type="range" id="k-faiz" min="10" max="30" value="12" step="0.1" class="w-full h-2" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>10 %</span>
+                        <span>30 %</span>
+                    </div>
                 </div>
             </div>
             <div class="w-full md:w-1/3">
                 <div class="abbbg text-white p-10 rounded-2xl text-center shadow-lg flex flex-col justify-center h-full">
                     <p class="text-blue-100 mb-2">Aylıq ödəniş</p>
                     <h2 class="text-4xl font-bold mb-6"><span id="k-ayliq">888.49</span> ₼</h2>
-                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100">Sifariş et</button>
+                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100">Davam et</button>
                 </div>
             </div>
         </div>
@@ -89,6 +102,10 @@
                         <span class="font-bold text-xl"><span id="d-meblegtxt">10000</span> ₼</span>
                     </div>
                     <input type="range" id="d-mebleg" min="200" max="100000" value="10000" step="100" class="w-full h-2" oninput="hesablaDepozit()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>200 ₼</span>
+                        <span>100000 ₼</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -96,6 +113,10 @@
                         <span class="font-bold text-xl"><span id="d-muddettxt">12</span> ay</span>
                     </div>
                     <input type="range" id="d-muddet" min="3" max="36" value="12" step="1" class="w-full h-2" oninput="hesablaDepozit()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>3 ay</span>
+                        <span>36 ay</span>
+                    </div>
                 </div>
                 <p class="text-gray-400 text-sm">* Depozit faiz dərəcəsi: 8% (Sabit)</p>
             </div>
@@ -107,7 +128,7 @@
                         <span>Hər ay faiz:</span>
                         <span class="font-bold"><span id="d-ayliq">66.67</span> ₼</span>
                     </div>
-                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100 mt-5">Depozit yerləşdir</button>
+                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100 mt-5">Davam et</button>
                 </div>
             </div>
         </div>
@@ -120,6 +141,10 @@
                         <span class="font-bold text-xl"><span id="a-qiymettxt">50000</span> ₼</span>
                     </div>
                     <input type="range" id="a-qiymet" min="5000" max="200000" value="50000" step="500" class="w-full h-2" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>5000 ₼</span>
+                        <span>200000 ₼</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -127,6 +152,10 @@
                         <span class="font-bold text-xl"><span id="a-meblegtxt">20</span> %</span>
                     </div>
                     <input type="range" id="a-ilkin" min="10" max="90" value="20" step="5" class="w-full h-2" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>10 %</span>
+                        <span>90 %</span>
+                    </div>
                     <div class="text-sm text-gray-400 mt-1">İlkin ödəniş məbləği: <span id="a-mebleg" class="font-bold text-gray-600">10000</span> ₼</div>
                 </div>
                 <div>
@@ -135,6 +164,10 @@
                         <span class="font-bold text-xl"><span id="a-muddettxt">24</span> ay</span>
                     </div>
                     <input type="range" id="a-muddet" min="3" max="60" value="24" step="1" class="w-full h-2" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>3 ay</span>
+                        <span>60 ay</span>
+                    </div>
                 </div>
             </div>
             <div class="w-full md:w-1/3">
@@ -151,7 +184,7 @@
                             <span class="font-bold"><span id="a-komissiya">200</span> ₼</span>
                         </div>
                     </div>
-                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100 mt-6">Sifariş et</button>
+                    <button class="bg-white abbtxt py-3 rounded-lg font-bold w-full hover:bg-gray-100 mt-6">Davam et</button>
                 </div>
             </div>
         </div>
@@ -164,6 +197,10 @@
                         <span class="font-bold text-xl"><span id="i-meblegtxt">100000</span> ₼</span>
                     </div>
                     <input type="range" id="i-mebleg" min="10000" max="500000" value="100000" step="1000" class="w-full h-2" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>10000 ₼</span>
+                        <span>500000 ₼</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -171,6 +208,10 @@
                         <span class="font-bold text-xl"><span id="i-muddettxt">12</span> il</span>
                     </div>
                     <input type="range" id="i-muddet" min="1" max="25" value="12" step="1" class="w-full h-2" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>1 il</span>
+                        <span>25 il</span>
+                    </div>
                 </div>
                 <div>
                     <div class="flex justify-between mb-2">
@@ -178,6 +219,10 @@
                         <span class="font-bold text-xl"><span id="i-faiztxt">8</span> %</span>
                     </div>
                     <input type="range" id="i-faiz" min="4" max="13" value="8" step="1" class="w-full h-2" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500">
+                        <span>4 %</span>
+                        <span>13 %</span>
+                    </div>
                 </div>
             </div>
             <div class="w-full md:w-1/3">
@@ -206,14 +251,14 @@
             let muddet = document.getElementById("k-muddet").value
             let faiz = document.getElementById("k-faiz").value
 
-            document.getElementById("k-meblegtxt").innerText = mebleg
-            document.getElementById("k-muddettxt").innerText = muddet
-            document.getElementById("k-faiztxt").innerText = faiz
+            document.getElementById("k-meblegtxt").innerHTML = mebleg
+            document.getElementById("k-muddettxt").innerHTML = muddet
+            document.getElementById("k-faiztxt").innerHTML = faiz
 
             let r = (faiz / 100) / 12
             let x = Math.pow(1 + r, muddet)
             let ayliq = (mebleg * r * x) / (x - 1)
-            document.getElementById("k-ayliq").innerText = ayliq.toFixed(2)
+            document.getElementById("k-ayliq").innerHTML = ayliq.toFixed(2)
         }
 
         // DEPOZIT
@@ -222,13 +267,13 @@
             let muddet = document.getElementById("d-muddet").value
             let illikFaiz = 8
 
-            document.getElementById("d-meblegtxt").innerText = mebleg
-            document.getElementById("d-muddettxt").innerText = muddet
+            document.getElementById("d-meblegtxt").innerHTML = mebleg
+            document.getElementById("d-muddettxt").innerHTML = muddet
 
             let qazanc = mebleg * (illikFaiz / 100) * (muddet / 12)
             let ayliq = (mebleg * (illikFaiz / 100)) / 12
-            document.getElementById("d-qazanc").innerText = qazanc.toFixed(2)
-            document.getElementById("d-ayliq").innerText = ayliqfaiz.toFixed(2)
+            document.getElementById("d-qazanc").innerHTML = qazanc.toFixed(2)
+            document.getElementById("d-ayliq").innerHTML = ayliqfaiz.toFixed(2)
         }
 
         // AVTOMOBIL
@@ -238,22 +283,22 @@
             let muddet = document.getElementById("a-muddet").value
             let illikFaiz = 14
 
-            document.getElementById("a-qiymettxt").innerText = qiymet
-            document.getElementById("a-meblegtxt").innerText = ilkinFaiz
-            document.getElementById("a-muddettxt").innerText = muddet
+            document.getElementById("a-qiymettxt").innerHTML = qiymet
+            document.getElementById("a-meblegtxt").innerHTML = ilkinFaiz
+            document.getElementById("a-muddettxt").innerHTML = muddet
 
             let ilkinodenis = qiymet * (ilkinFaiz / 100)
             let bankmenbleg = qiymet - ilkinodenis
             let komissiya = bankmenbleg * 0.005
 
-            document.getElementById("a-mebleg").innerText = ilkinodenis
-            document.getElementById("a-kredit").innerText = bankmenbleg
-            document.getElementById("a-komissiya").innerText = komissiya.toFixed(0)
+            document.getElementById("a-mebleg").innerHTML = ilkinodenis
+            document.getElementById("a-kredit").innerHTML = bankmenbleg
+            document.getElementById("a-komissiya").innerHTML = komissiya.toFixed(0)
 
             let r = (illikFaiz / 100) / 12
             let x = Math.pow(1 + r, muddet)
             let ayliq = (bankmenbleg * r * x) / (x - 1)
-            document.getElementById("a-ayliq").innerText = ayliq.toFixed(2)
+            document.getElementById("a-ayliq").innerHTML = ayliq.toFixed(2)
         }
 
         // IPOTEKA
@@ -262,18 +307,18 @@
             let il = document.getElementById("i-muddet").value
             let faiz = document.getElementById("i-faiz").value
 
-            document.getElementById("i-meblegtxt").innerText = mebleg
-            document.getElementById("i-muddettxt").innerText = il
-            document.getElementById("i-faiztxt").innerText = faiz
-            document.getElementById("i-son-mebleg").innerText = mebleg
-            document.getElementById("i-son-faiz").innerText = faiz
+            document.getElementById("i-meblegtxt").innerHTML = mebleg
+            document.getElementById("i-muddettxt").innerHTML = il
+            document.getElementById("i-faiztxt").innerHTML = faiz
+            document.getElementById("i-son-mebleg").innerHTML = mebleg
+            document.getElementById("i-son-faiz").innerHTML = faiz
 
             let aylar = il * 12
             let r = (faiz / 100) / 12
             let x = Math.pow(1 + r, aylar)
             let ayliq = (mebleg * r * x) / (x - 1)
 
-            document.getElementById("i-ayliq").innerText = ayliq.toFixed(2)
+            document.getElementById("i-ayliq").innerHTML = ayliq.toFixed(2)
         }
         hesablaKredit()
         hesablaDepozit()
