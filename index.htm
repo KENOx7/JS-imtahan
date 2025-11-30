@@ -33,6 +33,41 @@
             cursor: pointer;
             transition: 0.3s;
         }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px; 
+            background: #d3d3d3;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; 
+            background: #1b63ed;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #1b63ed;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
         
     </style>
 </head>
@@ -56,8 +91,8 @@
                         <span class="text-gray-500">Məbləğ</span>
                         <span class="font-bold text-xl"><span id="k-meblegtxt">10000</span> ₼</span>
                     </div>
-                    <input type="range" id="k-mebleg" min="300" max="50000" value="10000" step="100" class="w-full h-2" oninput="hesablaKredit()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                    <input type="range" id="k-mebleg" min="300" max="50000" value="10000" step="100" class="slider" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>300 ₼</span>
                         <span>50000 ₼</span>
                     </div>
@@ -67,8 +102,8 @@
                         <span class="text-gray-500">Müddət</span>
                         <span class="font-bold text-xl"><span id="k-muddettxt">12</span> ay</span>
                     </div>
-                    <input type="range" id="k-muddet" min="3" max="59" value="12" step="1" class="w-full h-2" oninput="hesablaKredit()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="k-muddet" min="3" max="59" value="12" step="1" class="slider" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>3 ay</span>
                         <span>59 ay</span>
                     </div>
@@ -78,8 +113,8 @@
                         <span class="text-gray-500">Faiz dərəcəsi</span>
                         <span class="font-bold text-xl"><span id="k-faiztxt">12</span> %</span>
                     </div>
-                    <input type="range" id="k-faiz" min="10" max="30" value="12" step="0.1" class="w-full h-2" oninput="hesablaKredit()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="k-faiz" min="10" max="30" value="12" step="0.1" class="slider" oninput="hesablaKredit()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>10 %</span>
                         <span>30 %</span>
                     </div>
@@ -101,8 +136,8 @@
                         <span class="text-gray-500">Məbləğ</span>
                         <span class="font-bold text-xl"><span id="d-meblegtxt">10000</span> ₼</span>
                     </div>
-                    <input type="range" id="d-mebleg" min="200" max="100000" value="10000" step="100" class="w-full h-2" oninput="hesablaDepozit()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="d-mebleg" min="200" max="100000" value="10000" step="100" class="slider" oninput="hesablaDepozit()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>200 ₼</span>
                         <span>100000 ₼</span>
                     </div>
@@ -112,8 +147,8 @@
                         <span class="text-gray-500">Müddət</span>
                         <span class="font-bold text-xl"><span id="d-muddettxt">12</span> ay</span>
                     </div>
-                    <input type="range" id="d-muddet" min="3" max="36" value="12" step="1" class="w-full h-2" oninput="hesablaDepozit()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="d-muddet" min="3" max="36" value="12" step="1" class="slider" oninput="hesablaDepozit()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>3 ay</span>
                         <span>36 ay</span>
                     </div>
@@ -140,8 +175,8 @@
                         <span class="text-gray-500">Avtomobilin qiyməti</span>
                         <span class="font-bold text-xl"><span id="a-qiymettxt">50000</span> ₼</span>
                     </div>
-                    <input type="range" id="a-qiymet" min="5000" max="200000" value="50000" step="500" class="w-full h-2" oninput="hesablaAvto()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="a-qiymet" min="5000" max="200000" value="50000" step="500" class="slider" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>5000 ₼</span>
                         <span>200000 ₼</span>
                     </div>
@@ -151,8 +186,8 @@
                         <span class="text-gray-500">İlkin ödəniş faizi</span>
                         <span class="font-bold text-xl"><span id="a-meblegtxt">20</span> %</span>
                     </div>
-                    <input type="range" id="a-ilkin" min="10" max="90" value="20" step="5" class="w-full h-2" oninput="hesablaAvto()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="a-ilkin" min="10" max="90" value="20" step="5" class="slider" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>10 %</span>
                         <span>90 %</span>
                     </div>
@@ -163,8 +198,8 @@
                         <span class="text-gray-500">Kredit müddəti</span>
                         <span class="font-bold text-xl"><span id="a-muddettxt">24</span> ay</span>
                     </div>
-                    <input type="range" id="a-muddet" min="3" max="60" value="24" step="1" class="w-full h-2" oninput="hesablaAvto()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="a-muddet" min="3" max="60" value="24" step="1" class="slider" oninput="hesablaAvto()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>3 ay</span>
                         <span>60 ay</span>
                     </div>
@@ -196,8 +231,8 @@
                         <span class="text-gray-500">Kredit məbləği</span>
                         <span class="font-bold text-xl"><span id="i-meblegtxt">100000</span> ₼</span>
                     </div>
-                    <input type="range" id="i-mebleg" min="10000" max="500000" value="100000" step="1000" class="w-full h-2" oninput="hesablaIpoteka()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="i-mebleg" min="10000" max="500000" value="100000" step="1000" class="slider" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>10000 ₼</span>
                         <span>500000 ₼</span>
                     </div>
@@ -207,8 +242,8 @@
                         <span class="text-gray-500">Müddət (il)</span>
                         <span class="font-bold text-xl"><span id="i-muddettxt">12</span> il</span>
                     </div>
-                    <input type="range" id="i-muddet" min="1" max="25" value="12" step="1" class="w-full h-2" oninput="hesablaIpoteka()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="i-muddet" min="1" max="25" value="12" step="1" class="slider" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>1 il</span>
                         <span>25 il</span>
                     </div>
@@ -218,8 +253,8 @@
                         <span class="text-gray-500">İllik faiz dərəcəsi</span>
                         <span class="font-bold text-xl"><span id="i-faiztxt">8</span> %</span>
                     </div>
-                    <input type="range" id="i-faiz" min="4" max="13" value="8" step="1" class="w-full h-2" oninput="hesablaIpoteka()">
-                    <div class="flex justify-between mb-5 text-gray-500">
+                     <input type="range" id="i-faiz" min="4" max="13" value="8" step="1" class="slider" oninput="hesablaIpoteka()">
+                    <div class="flex justify-between mb-5 text-gray-500 text-sm">
                         <span>4 %</span>
                         <span>13 %</span>
                     </div>
@@ -245,6 +280,17 @@
         </div>
     </div>
     <script>
+        // INPUT RANGE
+        function updateSliderColors() {
+            document.querySelectorAll('input.slider').forEach(input => {
+                const min = parseFloat(input.min);
+                const max = parseFloat(input.max);
+                const val = parseFloat(input.value);
+                const percentage = ((val - min) / (max - min)) * 100;
+                input.style.background = `linear-gradient(to right, #1b63ed ${percentage}%, #d3d3d3 ${percentage}%)`;
+            });
+        }
+
         // KREDIT
         function hesablaKredit() {
             let mebleg = document.getElementById("k-mebleg").value
@@ -273,7 +319,7 @@
             let qazanc = mebleg * (illikFaiz / 100) * (muddet / 12)
             let ayliq = (mebleg * (illikFaiz / 100)) / 12
             document.getElementById("d-qazanc").innerHTML = qazanc.toFixed(2)
-            document.getElementById("d-ayliq").innerHTML = ayliqfaiz.toFixed(2)
+            document.getElementById("d-ayliq").innerHTML = ayliq.toFixed(2) // Bug düzəldildi: ayliqfaiz -> ayliq
         }
 
         // AVTOMOBIL
@@ -320,10 +366,18 @@
 
             document.getElementById("i-ayliq").innerHTML = ayliq.toFixed(2)
         }
+        
+        document.addEventListener('input', (e) => {
+            if(e.target.classList.contains('slider')) {
+                updateSliderColors(); 
+            }
+        });
+
         hesablaKredit()
         hesablaDepozit()
         hesablaAvto()
         hesablaIpoteka()
+        updateSliderColors() 
     </script>
 
 </body>
