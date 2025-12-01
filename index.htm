@@ -314,120 +314,30 @@
                 </div>
                 <div class="flex flex-col relative gap-2">
                     <div class="bg-white rounded-xl p-3 flex justify-between shadow-md h-16 border border-transparent hover:border-gray-200 ">
-                        <input type="number" value="1" class="text-lg outline-none w-full">
-                        <div class="flex items-center font-bold cursor-pointer">USD</div>
+                        <input type="number" id="pul" value="1" class="text-lg outline-none w-full" oninput="hesablaValyuta()">
+                        <select id="secim1" onchange="hesablaValyuta()" class="font-bold cursor-pointer outline-none">
+                            <option value="1.7020">USD</option>
+                            <option value="1">AZN</option>
+                            <option value="1.9996">EUR</option>
+                            <option value="0.0251">RUB</option>
+                        </select>
                     </div>
                     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                        <button class="bg-[#1b63ed] text-white rounded-full p-4 hover:bg-blue-700 transition shadow-sm">&UpArrow;&downarrow;</button>
+                        <button onclick="cevir()" class="bg-[#1b63ed] text-white rounded-full p-4 hover:bg-blue-700 transition shadow-sm">&UpArrow;&downarrow;</button>
                     </div>
                     <div class="bg-white rounded-xl p-3 flex justify-between shadow-md h-16 border border-transparent hover:border-gray-200">
-                        <input type="number" value="1.6970" class="text-lg outline-none w-full">
-                        <div class="flex items-center  font-bold cursor-pointer">AZN</div>
+                        <input type="number" id="pul2" class="text-lg outline-none w-full" oninput="hesablaValyuta2()">
+                        <select id="secim2" onchange="hesablaValyuta()" class="font-bold cursor-pointer outline-none">
+                            <option value="1">AZN</option>
+                            <option value="1.7020">USD</option>
+                            <option value="1.9996">EUR</option>
+                            <option value="0.0251">RUB</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        // INPUT RANGE
-        function updateSliderColors() {
-            document.querySelectorAll('input.slider').forEach(input => {
-                const min = parseFloat(input.min);
-                const max = parseFloat(input.max);
-                const val = parseFloat(input.value);
-                const percentage = ((val - min) / (max - min)) * 100;
-                input.style.background = `linear-gradient(to right, #1b63ed ${percentage}%, #d3d3d3 ${percentage}%)`;
-            });
-        }
-
-        // KREDIT
-        function hesablaKredit() {
-            let mebleg = document.getElementById("k-mebleg").value
-            let muddet = document.getElementById("k-muddet").value
-            let faiz = document.getElementById("k-faiz").value
-
-            document.getElementById("k-meblegtxt").innerHTML = mebleg
-            document.getElementById("k-muddettxt").innerHTML = muddet
-            document.getElementById("k-faiztxt").innerHTML = faiz
-
-            let r = (faiz / 100) / 12
-            let x = Math.pow(1 + r, muddet)
-            let ayliq = (mebleg * r * x) / (x - 1)
-            document.getElementById("k-ayliq").innerHTML = ayliq.toFixed(2)
-        }
-
-        // DEPOZIT
-        function hesablaDepozit() {
-            let mebleg = document.getElementById("d-mebleg").value
-            let muddet = document.getElementById("d-muddet").value
-            let illikFaiz = 8
-
-            document.getElementById("d-meblegtxt").innerHTML = mebleg
-            document.getElementById("d-muddettxt").innerHTML = muddet
-
-            let qazanc = mebleg * (illikFaiz / 100) * (muddet / 12)
-            let ayliq = (mebleg * (illikFaiz / 100)) / 12
-            document.getElementById("d-qazanc").innerHTML = qazanc.toFixed(2)
-            document.getElementById("d-ayliq").innerHTML = ayliq.toFixed(2) // Bug düzəldildi: ayliqfaiz -> ayliq
-        }
-
-        // AVTOMOBIL
-        function hesablaAvto() {
-            let qiymet = document.getElementById("a-qiymet").value
-            let ilkinFaiz = document.getElementById("a-ilkin").value
-            let muddet = document.getElementById("a-muddet").value
-            let illikFaiz = 14
-
-            document.getElementById("a-qiymettxt").innerHTML = qiymet
-            document.getElementById("a-meblegtxt").innerHTML = ilkinFaiz
-            document.getElementById("a-muddettxt").innerHTML = muddet
-
-            let ilkinodenis = qiymet * (ilkinFaiz / 100)
-            let bankmenbleg = qiymet - ilkinodenis
-            let komissiya = bankmenbleg * 0.005
-
-            document.getElementById("a-mebleg").innerHTML = ilkinodenis
-            document.getElementById("a-kredit").innerHTML = bankmenbleg
-            document.getElementById("a-komissiya").innerHTML = komissiya.toFixed(0)
-
-            let r = (illikFaiz / 100) / 12
-            let x = Math.pow(1 + r, muddet)
-            let ayliq = (bankmenbleg * r * x) / (x - 1)
-            document.getElementById("a-ayliq").innerHTML = ayliq.toFixed(2)
-        }
-
-        // IPOTEKA
-        function hesablaIpoteka() {
-            let mebleg = document.getElementById("i-mebleg").value
-            let il = document.getElementById("i-muddet").value
-            let faiz = document.getElementById("i-faiz").value
-
-            document.getElementById("i-meblegtxt").innerHTML = mebleg
-            document.getElementById("i-muddettxt").innerHTML = il
-            document.getElementById("i-faiztxt").innerHTML = faiz
-            document.getElementById("i-son-mebleg").innerHTML = mebleg
-            document.getElementById("i-son-faiz").innerHTML = faiz
-
-            let aylar = il * 12
-            let r = (faiz / 100) / 12
-            let x = Math.pow(1 + r, aylar)
-            let ayliq = (mebleg * r * x) / (x - 1)
-
-            document.getElementById("i-ayliq").innerHTML = ayliq.toFixed(2)
-        }
-        
-        document.addEventListener('input', (e) => {
-            if(e.target.classList.contains('slider')) {
-                updateSliderColors(); 
-            }
-        });
-
-        hesablaKredit()
-        hesablaDepozit()
-        hesablaAvto()
-        hesablaIpoteka()
-        updateSliderColors() 
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
