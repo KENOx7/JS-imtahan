@@ -1,3 +1,10 @@
+// MENU
+const menubtn = document.getElementById('menubtn');
+const menu = document.getElementById('menu');
+menubtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
 // INPUT RANGE
 function updateSliderColors() {
     document.querySelectorAll('input.slider').forEach(input => {
@@ -8,7 +15,6 @@ function updateSliderColors() {
         input.style.background = `linear-gradient(to right, #1b63ed ${percentage}%, #d3d3d3 ${percentage}%)`;
     });
 }
-
 // KREDIT
 function hesablaKredit() {
     let mebleg = document.getElementById("k-mebleg").value
